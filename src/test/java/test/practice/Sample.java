@@ -17,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Sample {
 
 	public WebDriver driver;
-	private String txtBoxSearchBox = "//input[@id='twotabsearchtextbox']";
+	private String txtInputSearchBox = "//input[@id='twotabsearchtextbox']";
 	private String btnGo = "//input[@value='Go']";
 	private String product = "//span[contains(text(),'Mi Smart Band 5')]";
 	private String txtpriceValue = "//span[@id='priceblock_dealprice']";
@@ -39,7 +39,7 @@ public class Sample {
 	@Test
 	public void test() {
 		driver.get("https://www.amazon.in/");
-		driver.findElement(By.xpath(txtBoxSearchBox)).sendKeys("mi watch band 5");
+		driver.findElement(By.xpath(txtInputSearchBox)).sendKeys("mi watch band 5");
 		driver.findElement(By.xpath(btnGo)).click();
 		driver.findElement(By.xpath(product)).click();
 		String productName = driver.findElement(By.xpath(product)).getText();
